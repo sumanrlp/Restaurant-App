@@ -1,0 +1,52 @@
+<br>
+
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="margin-top: sideNav;">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>My Account</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+          <i class="fas fa-chart-area fa-fw me-3"></i><span>Orders</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-lock fa-fw me-3"></i><span>Help</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-chart-line fa-fw me-3"></i><span>About</span></a>
+        <a class="list-group-item list-group-item-action py-2 ripple" (click)="logout()">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </nav><br>
+
+  <div class="sideDiv">
+    <h1 style="margin-left: 2%;">Welcome! {{userdata?.name}}</h1>
+    <mat-card style="width: 50%;">
+        <mat-card-content>
+            <div class="container">
+                <h2>User Details:</h2>
+            
+                <table>
+                    <tr>
+                        <th>Name:</th>
+                        <td>{{userdata?.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>{{userdata?.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Id:</th>
+                        <td>{{userdata?.id}}</td>
+                    </tr>
+                    <tr>
+                        <th>Role:</th>
+                        <td>{{userdata?.role}}</td>
+                    </tr>
+                </table>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    
+  </div>

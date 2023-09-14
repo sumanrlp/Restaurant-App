@@ -1,0 +1,35 @@
+<div class="sideDiv">
+    <h1 style="margin-left: 2%;">Welcome! {{userdata?.name}}</h1>
+    <mat-card style="width: 50%;">
+        <mat-card-content>
+            <div class="container">
+                <h2>User Details: <button [disabled]="isEditClicked" (click)="edit(name,email,id)" style="float: right;"><i class="fa fa-pencil-square-o" style="font-weight: bold;"></i></button></h2>
+            
+                <table>
+                    <tr>
+                        <th>Name:</th>
+                        <td> <span><input id="name" [disabled]="!isEditClicked" (keyup)="changed(name,email,id,email1)" value="{{userdata?.name}}" #name class="data" style="border: none; background-color: white;"></span></td>
+                       
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td ><span><input pattern=".+@gmail.com" name="email" ngModel  [disabled]="!isEditClicked" (keyup)="changed(name,email,id,email1)" value="{{userdata?.email}}" #email1="ngModel" #email class="data" id="email" style="border: none; background-color: white;"></span>
+                            <div style="color: red;" *ngIf="email1.errors?.['pattern']">Invalid email Id</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Usename:</th>
+                        <td ><span><input id="id" [disabled]="!isEditClicked" (keyup)="changed(name,email,id,email1)" value="{{userdata?.id}}" #id class="data" style="border: none; background-color: white;"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Role:</th>
+                        <td><span><input  value="{{userdata?.role}}" style="border: none; background-color: white;" disabled></span></td>
+                    </tr>
+                </table>
+            </div><br>
+            <button [disabled]="!isDataEdited"  mat-raised-button color="warn" (click)="update(name,email,id)" >Update</button>
+            <button *ngIf="isEditClicked"  mat-raised-button (click)="cancel(name,email,id)" style="margin-left: 10px;">Cancel</button>
+        </mat-card-content>
+      </mat-card>
+    
+  </div>

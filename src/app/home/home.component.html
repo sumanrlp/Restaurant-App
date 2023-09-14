@@ -1,0 +1,263 @@
+<div class="parentContainer" >
+    <div id="section1" style="margin: 0%; line-height: calc(2vw);">
+        <div style=" text-align: center; color: white; display: flex; flex-direction: column;">
+            <h1 style="margin: 0%; padding-top: 30px; font-size-adjust: var(align-content); font-size: calc(4vw);">Welcome
+                To </h1>
+            <h1 style="font-size: calc(6vw); font-style: italic;line-height: calc(7vw);">Solapur’s Restaurant</h1>
+        </div>
+    
+        <div style="height: 65%; text-align: center; color: white;">
+            <p style="margin: 0%; line-height: calc(1vw+20px); text-align: center; font-size: 1.3vw;">Solapur’s food mostly
+                consists of many delicious Maharashtrian dishes as well as few others, such as: <br>
+    
+                Batata Bhaji – A curry of diced boiled potatoes, spiced with turmeric, green chillies, ginger & mustard.
+                <br>
+                Usal – a curry made with sprouted beans mung or any other bean sprouts. <br>
+                Vada – Fried snacks, made with flour and vegetables like potato (Batata Vada), coriander (Kothmbir Vadi).
+            </p>
+        </div>
+    </div>
+    
+    <div style="background-color: #ffffff;" class="menu" id="menu">
+    
+        <div style=" background-color: tomato; margin-top: 1vw;">
+            <h1 style="text-align: center;">Menu</h1>
+        </div>
+    
+        <div style="scroll-behavior: smooth; margin-top: 2vw; padding: 1vw;">
+            <div style=" display: flex; justify-content: space-evenly;" class="menuimg1">
+                <div id="kb">
+                    <div id="addToBucketPar">
+                        <div class="addToBucketSub" style="width: 100%;">
+                            <a (click)="openItem()"><img class="menuimg img-fluid" src="assets/Images/kadakbhakari.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="pb">
+                    <a href=""><img class="menuimg" src="assets/Images/pavbhaji.jpeg" alt=""></a>
+                </div>
+                <div id="vp">
+                    <a href=""><img class="menuimg" src="assets/Images/vadapav2.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="menuname1" style="display: flex; justify-content: space-evenly;">
+                <div>
+                    <h2>Kadak Bhakari.</h2>
+                </div>
+                <div id="pbname">
+                    <h2>Pav Bhaji.</h2>
+                </div>
+                <div id="vpname">
+                    <h2>Vada Pav.</h2>
+                </div>
+            </div>
+            <div class="menuname1" style="display: flex; justify-content: space-evenly;margin-bottom: 1vw;">
+                <div id="'kb_sec'">
+                    <p style="font-size: 2vw; margin-right: 10px;"><b>&#x20b9;20.0</b></p>
+                    <button @slide *ngIf="!isKb_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('kb_btn')">Add to Bucket</button>
+                    <div @slide *ngIf="isKb_AddToBucketCLicked" id="kb_btn" style="margin: 0%;" class="addItemSection">
+                        <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                            aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('kb_btn')">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="btn2" (click)="modifyCount('kb_btn','-')">-</button>
+                        <p class="count" style="font-size: 1.5vw; padding: 0 10px;"> <b>{{Kb_count}}</b> </p>
+                        <button class="btn2"(click)="modifyCount('kb_btn','+')">+</button>
+                    </div>
+                </div>
+                <div id="'pb_sec'">
+                    <p style="font-size: 2vw; margin-right: 10px;"><b>&#x20b9;80.0</b></p>
+                    <button @slide *ngIf="!isPb_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('pb_btn')">Add to Bucket</button>
+                    <div @slide *ngIf="isPb_AddToBucketCLicked" style="margin: 0%;">
+                        <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                            aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('pb_btn')">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="btn2" (click)="modifyCount('pb_btn','-')">-</button>
+                        <p style="font-size: 1.5vw; padding: 0 10px;"> <b>{{Pb_count}}</b> </p>
+                        <button class="btn2" (click)="modifyCount('pb_btn','+')">+</button>
+                    </div>
+                </div>
+                <div id="vp_sec">
+                    <p style="font-size: 2vw; margin-right: 10px;"><b>&#x20b9;30.0</b></p>
+                    <button @slide *ngIf="!isVp_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('vp_btn')">Add to Bucket</button>
+                    <div @slide *ngIf="isVp_AddToBucketCLicked" style="margin: 0%;">
+                        <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                            aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('vp_btn')">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="btn2" (click)="modifyCount('vp_btn','-')">-</button>
+                        <p style="font-size: 1.5vw; padding: 0 10px;"> <b>{{Vp_count}}</b> </p>
+                        <button class="btn2" (click)="modifyCount('vp_btn','+')">+</button>
+                    </div>
+                </div>
+            </div><br>
+    
+            <div style="display: flex; justify-content: space-evenly;" class="menuimg2">
+                <div id="hg">
+                    <a href=""><img class="menuimg" src="assets/Images/huggi1.jpg" alt=""></a>
+                </div>
+                <div id="bv">
+                    <a href=""><img class="menuimg" src="assets/Images/bharalivangi.jpg" alt=""></a>
+                </div>
+                <div id="sp">
+                    <a href=""> <img class="menuimg" src="assets/Images/shengapoli.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="menuname2"
+                style="display: flex; justify-content: space-evenly; ">
+                <div id="hgname">
+                    <h2>Huggi</h2>
+                </div>
+                <div id="bvname">
+                    <h2>Bharali vangi</h2>
+                </div>
+                <div id="spname">
+                    <h2>Shengachi Poli.</h2>
+                </div>
+    
+            </div>
+            <div class="menuname1" style="display: flex; justify-content: space-evenly;margin-bottom: 1vw;">
+                <div id="'hg_sec'">
+                    <p style="font-size: 2vw; margin-right: 10px;"><b>&#x20b9;60.0</b></p>
+                    <button @slide *ngIf="!isHg_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('hg_btn')">Add to Bucket</button>
+                    <div @slide *ngIf="isHg_AddToBucketCLicked" id="hg_btn" style="margin: 0%;">
+                        <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                            aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('hg_btn')">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="btn2" (click)="modifyCount('hg_btn','-')">-</button>
+                        <p style="font-size: 1.5vw; padding: 0 10px;"> <b>{{Hg_count}}</b> </p>
+                        <button class="btn2"(click)="modifyCount('hg_btn','+')">+</button>
+                    </div>
+                </div>
+                <div id="'bv_sec'">
+                    <p style="font-size: 2vw; margin-right: 10px;"><b>&#x20b9;40.0</b></p>
+                    <button @slide *ngIf="!isBv_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('bv_btn')">Add to Bucket</button>
+                    <div @slide *ngIf="isBv_AddToBucketCLicked" style="margin: 0%;">
+                        <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                            aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('bv_btn')">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="btn2" (click)="modifyCount('bv_btn','-')">-</button>
+                        <p style="font-size: 1.5vw; padding: 0 10px;"> <b>{{Bv_count}}</b> </p>
+                        <button class="btn2" (click)="modifyCount('bv_btn','+')">+</button>
+                    </div>
+                </div>
+                <div id="sp_sec">
+                    <p style="font-size: 2vw; margin-right: 10px;"><b>&#x20b9;40.0</b></p>
+                    <button @slide *ngIf="!isSp_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('sp_btn')">Add to Bucket</button>
+                    <div @slide *ngIf="isSp_AddToBucketCLicked" style="margin: 0%;">
+                        <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                            aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('sp_btn')">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="btn2" (click)="modifyCount('sp_btn','-')">-</button>
+                        <p style="font-size: 1.5vw; padding: 0 10px;"> <b>{{Vp_count}}</b> </p>
+                        <button class="btn2" (click)="modifyCount('sp_btn','+')">+</button>
+                    </div>
+                </div>
+        </div>
+    
+    </div>
+    
+    <div class="aboutContainer">
+        <div id="about" class="about" style="border-top: 2px dotted chocolate; padding-top: 3%;">
+    
+            <div id="aboutimg">
+        
+            </div>
+        
+            <div id="aboutcontent" style="text-align: center; margin-right: 10%; width: 40%; float: right; ">
+                <h2 style="font-size: 2.4vw; margin: 0%;">Welcome to Solapur’s Restaurant</h2><br>
+                <p style="font-size: 1.4vw;">Little story</p><br>
+                <p style="font-size: 1.1vw; opacity: 0.7; line-height: 2.1vw; z-index: 1;">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis
+                    arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem.
+                </p>
+                <p style="font-size: 1.1vw; line-height: 2.1vw; opacity: 0.7; z-index: 1;">Sed semper orci sit amet porta
+                    placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat
+                    elit in justo vestibulum, et maximus sem pulvinar.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="feedback">
+        <h2 style="font-size: 2vw;">We are Taking a Quick survey for our better Survice</h2>
+        <p style="font-size: 1.3vw; margin-top: 0%;">Please give your valuable feedback</p><br>
+        <a routerLink="/feedback"><button
+                style="background-color: chocolate; scroll-behavior: smooth; color: white; padding: 0.4vw 2.5vw; border-radius: 5px; border: none; font-size: 1.3vw;">Click
+                here to give feedback</button></a>
+    </div>
+    
+    <div id="contact">
+        <div style="width: 35%; height: 100%; color: white;float: left;">
+            <div style="float: left; margin-left: 12vw;">
+                <img src="assets/Images/call.png" alt="">
+            </div>
+            <div style="float: right; margin-top: 1vw; padding-left: 1vw;">
+                <h2>Phone :</h2>
+                <h2>+91 012 345 6789</h2>
+            </div>
+        </div>
+    
+        <div style="width: 30%; height: 100%; color: white;float: right; ">
+            <div style="float: left;">
+                <img src="assets/Images/mail.png" alt="">
+            </div>
+            <div style="float: right; margin-top: 1vw; padding-left: 1vw;">
+                <h2>Email :</h2>
+                <h2><a target="_blank"
+                        href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=potdarrushi1705@gmail.com&tf=1">potdarrushi1705@gmail.com</a>
+                </h2>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div id="footer">
+        <div id="img">
+    
+        </div>
+        <div
+            style="height: 20vw; width: 20%; background-color: none; display: inline; position: absolute; margin: 2vw 10%; color: white; font-family: 'lighten';">
+            <h2 style="font-size: 2vw">ABOUT US</h2>
+            <p style="opacity: 0.8 ; line-height: 2vw; font-size: 1vw">Integer cursus scelerisque ipsum id efficitur. Donec
+                a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere
+                dui, at ornare turpis ultrices sit amet. Nulla cursus lorem ut nisi porta, ac eleifend arcu ultrices.
+    
+            </p>
+        </div>
+        <div
+            style="height: 20vw; width: 20%; background-color: none; display: inline; position: absolute; margin: 2vw 10% 5vh 40%; font-family: 'lighten'; color: white;">
+            <h2 style="font-size: 2vw">OPENING HOURS</h2>
+            <p style="font-size: 1vw; opacity: 0.8 ; line-height: 3vw;">Monday: Closed <br>
+    
+                Tue-Wed : 9:Am - 10PM <br />
+    
+                Thu-Fri : 9:Am - 10PM <br />
+    
+                Sat-Sun : 5:PM - 10PM</p>
+        </div>
+        <div
+            style="height: 20vw; width: 20%; background-color:none; display: inline; position: absolute; margin: 2vw 10% 5vh 65%; color: white; font-family: 'lighten';">
+            <h2 style="font-size: 2vw">CONTACT INFORMATION</h2>
+            <p style="font-size: 1vw; line-height: 2.5vw; font-size: 1.1vw; opacity: 0.8;">Chatrapati Shivaji Chowk,<br>
+                Near Bus-Stand <br>
+                Main Road, <br>
+                Solapur. 413001
+    
+        </div>
+        <a href="http://www.instagram.com/rishi_potdar" target="_blank"><img src="assets/Images/insta.png" alt=""
+                style="position: absolute; margin-top: 17vw; margin-left: 82%;height: 3.3vw; width: 3.3vw"></a>
+        <a href="https://www.facebook.com/rushikesh.potdar.148" target="_blank"><img src="assets/Images/fb.png" alt=""
+                style="position: absolute; margin-top: 17vw; margin-left: 87%;height: 3.3vw; width: 3.3vw"></a>
+    
+    
+    </div>
+    
+    <div id="bottom" style="text-align: center; font-family: 'lighten'; color: white;">
+        <br>
+        <p style="font-size: 1.5vw">All Rights Reserved. © 2021 Solapur’s Restaurant Design By : rishi potdar</p>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<!-- <div class="loginContainer">
+    <form [formGroup]='form' class="form-group" (ngSubmit)="proceedSignup()">
+        <div class="container">
+            <h1>Signup</h1><br>
+            <div *ngIf="!isValid" class="alert alert-danger">
+                <div>Plese enter valid data</div>
+            </div>
+            <input type="text" class="form-control" formControlName="name" name="name" id="name" placeholder="Name">
+            <div *ngIf="name.touched && name.invalid" style="color: red;">
+                <div *ngIf="name.errors.required">Name required</div>
+                <div *ngIf="name.errors?.['minlength']">Name should be min of
+                    {{name.errors?.['minlength'].requiredLength}} chars</div>
+            </div>
+            <br>
+            <input type="text" class="form-control" formControlName="id" name="id" id="id" placeholder="Username">
+            <div *ngIf="id.touched && id.invalid" style="color: red;">
+                <div *ngIf="id.errors.required">Usename required</div>
+            </div>
+            <br>
+            <input type="email" class="form-control" formControlName="email" name="email" id="emailid"
+                placeholder="Email id">
+            <div *ngIf="email.touched && email.invalid" style="color: red;">
+                <div *ngIf="email.errors.required">Email id required</div>
+                <div *ngIf="email.errors?.['pattern']">Invalid email id</div>
+                <div *ngIf="email.errors?.notuniqueemail">email id taken</div>
+            </div>
+            <br>
+            <input type="password" class="form-control" formControlName="pass" name="pass" id="password"
+                placeholder="Password">
+            <div *ngIf="pass.touched && pass.invalid" style="color: red;">
+                <div *ngIf="pass.errors.required">Pass required</div>
+                <div *ngIf="pass.errors?.['minlength']">Pass should be min of
+                    {{pass.errors?.['minlength'].requiredLength}} chars</div>
+                <div *ngIf="pass.errors?.['pattern']">Pass should contain atleast 1 lowercase, Uppercase, special char,
+                    number and letgth should be min of 8</div>
+            </div>
+            <br>
+            <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword"
+                id="confirmPassword" placeholder="Confirm Password" (change)="log(form)">
+            <div *ngIf="confirmPassword.touched && confirmPassword.invalid" style="color: red;">
+                <div *ngIf="confirmPassword.errors.required">Pass required</div>
+            </div>
+            <div *ngIf="confirmPassword.valid && form.errors?.['passNotMatch']" style="color: red;">Pass does not match
+            </div>
+            <br>
+            <button type="submit" class="btn form-control">Sign up</button>
+            <br><br>
+            <a routerLink="/login">Already user? click here to Login</a>
+        </div>
+    </form>
+</div> -->
+
+<mat-card>
+    <mat-card-content style="padding: 0%; box-shadow: 0 0 3px black;">
+        <form [formGroup]='form' class="example-form" (ngSubmit)="proceedSignup()">
+            <div class="container">
+                <h1 style="margin: 0%;">Signup</h1><br>
+                <div *ngIf="!isValid" class="alert alert-danger">
+                    <div>Plese enter valid data</div>
+                </div>
+                <div *ngIf="form.errors?.['unexpectedError']" class="alert alert-danger">Unexpected error from server side, please try again after some time.</div>
+                <div *ngIf="form.errors?.['duplicateUserId']" class="alert alert-danger">UserName already taken</div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input class="form-control" formControlName="name" name="name" id="name" matInput>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>UserName</mat-label>
+                    <input class="form-control" formControlName="id" name="id" id="id" matInput>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input class="form-control" formControlName="email" name="email" id="email" matInput>
+                </mat-form-field>
+                <br>
+                <div *ngIf="email.errors?.notuniqueemail" style="color: red;">email id taken</div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" class="form-control" formControlName="pass" name="pass" id="pass" matInput>
+                </mat-form-field>
+                <div *ngIf="pass.touched && pass.invalid" style="color: red;">
+                    <div *ngIf="pass.errors?.['pattern']">Pass should contain atleast 1 lowercase, Uppercase, special char,
+                        number and letgth should be min of 8</div>
+                </div>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Cofirm Password</mat-label>
+                    <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword"
+                        id="confirmPassword" matInput>
+                </mat-form-field>
+                <div *ngIf="confirmPassword.valid && form.errors?.['passNotMatch']" style="color: red;">Pass does not match
+                </div>
+                <br>
+                <mat-form-field>
+                    <mat-label>Select security question</mat-label>
+                    <mat-select name="securityQuestion" formControlName="securityQuestion">
+                        <mat-option [value]="'Favorite cricketer'">Favorite cricketer</mat-option>
+                        <mat-option [value]="'Favorite food'">Favorite food</mat-option>
+                        <mat-option [value]="'Pet name'">Pet name</mat-option>
+                        <mat-option [value]="'Nick name'">Nick name</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Security answer</mat-label>
+                    <input type="text" formControlName="securityAnswer" name="securityAnswer"
+                        id="securityAnswer" matInput>
+                </mat-form-field>
+                <div>
+                    <button class="loginBtn" type="submit" mat-raised-button color="warn" style=" margin-left: 10px; float: right;"
+                       >Sign up</button>
+                    <button mat-stroked-button color="warn" mat-diolog-close (click)="close()" style="float: right;">Cancel</button>
+                </div>
+                <br><br>
+                <a (click)="callLogin()" >Already user? click here to Login</a>
+                
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

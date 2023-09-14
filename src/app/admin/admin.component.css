@@ -1,0 +1,31 @@
+table,
+th,
+td {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+table {
+    width: 40%;
+    text-align: center;
+    height: auto;
+}
+
+.container {
+    padding: 20px;
+}
+
+.button-r {
+    color: white;
+    background-color: #f44336;
+}
+.btn-danger{
+    background-color: #f44336!important;
+}
+.btn-danger:hover{
+    box-shadow: 0 0 3px black;
+}
+
+
+
