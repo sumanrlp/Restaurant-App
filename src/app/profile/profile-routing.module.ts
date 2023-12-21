@@ -5,10 +5,11 @@ import { OrdersComponent } from './orders/orders.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
+import { AuthGaurdLoddedIn } from '../gaurd/auth.guard';
 
 const routes: Routes = [
   {
-    path:'dashboard', component:ProfileChildComponent,
+    path:'dashboard', component:ProfileChildComponent, canActivate:[AuthGaurdLoddedIn],
     children:[
       {
         path:'orders', component: OrdersComponent

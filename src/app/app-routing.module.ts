@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGaurdLoddedIn, AuthGaurdAdmin } from './gaurd/auth.guard';
-import { NoAccessComponent } from './no-access/no-access.component';
-
 const routes: Routes = [
   {
     path: '', component: HomeComponent
@@ -26,9 +24,6 @@ const routes: Routes = [
   },
   {
     path: 'admin', component: AdminComponent, canActivate:[AuthGaurdLoddedIn, AuthGaurdAdmin]
-  },
-  {
-    path: 'no-access', component: NoAccessComponent
   },
   {
     path: 'feedback', component: HomeComponent, canActivate:[AuthGaurdLoddedIn]

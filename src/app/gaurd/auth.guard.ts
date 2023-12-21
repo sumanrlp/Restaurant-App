@@ -1,12 +1,10 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivateFn, Router } from '@angular/router';
 import { AuthServicesService } from '../services/auth-services.service';
 import { inject } from '@angular/core';
 
 
 
-export const AuthGaurdLoddedIn:CanActivateFn= (route, state):boolean =>{
+export const AuthGaurdLoddedIn:CanActivateFn= ( state):boolean =>{
 
   const router= inject(Router);
   const service= inject(AuthServicesService)
@@ -21,7 +19,7 @@ export const AuthGaurdLoddedIn:CanActivateFn= (route, state):boolean =>{
 
 }
 
-export const AuthGaurdAdmin:CanActivateFn= (route, state):boolean =>{
+export const AuthGaurdAdmin:CanActivateFn= ( state):boolean =>{
 
   const router= inject(Router);
   const service= inject(AuthServicesService)

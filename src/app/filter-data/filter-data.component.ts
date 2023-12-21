@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminComponent } from '../admin/admin.component';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 
@@ -10,7 +9,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class FilterDataComponent implements OnInit {
 
-  constructor(private dialog: MatDialogRef<FilterDataComponent>, private fb: FormBuilder) {
+  constructor(private dialog: MatDialogRef<FilterDataComponent>) {
 
   }
   filterActive: any
@@ -42,34 +41,6 @@ export class FilterDataComponent implements OnInit {
     }
     
   }
-
-  // form=this.fb.group({
-  //   active:this.fb.control([]),
-  //   inActive:this.fb.control([]),
-  //   user:this.fb.control([]),
-  //   staff:this.fb.control([]),
-  //   given:this.fb.control([]),
-  //   not:this.fb.control([])
-  // })
-
-  // get active(){
-  //   return this.form.get('active')
-  // }
-  // get inActive(){
-  //   return this.form.get('inActive')
-  // }
-  // get user(){
-  //   return this.form.get('user')
-  // }
-  // get staff(){
-  //   return this.form.get('staff')
-  //
-  // get given(){
-  //   return this.form.get('given')
-  // }
-  // get not(){
-  //   return this.form.get('not')
-  // }
 
   filter() {
     if(!this.filterActive){

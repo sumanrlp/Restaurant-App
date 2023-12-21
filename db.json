@@ -3,7 +3,7 @@
     {
       "name": "Rishikesh",
       "id": "rishi",
-      "email": "rishikesha@gmail.com",
+      "email": "rishikesh@gmail.com",
       "pass": "Suman@1234",
       "confirmPassword": "Suman@1234",
       "isActive": true,
@@ -12,7 +12,25 @@
       "isFeedbackGiven": true,
       "feedbackLabel": "Given",
       "lastLoggedin": "8/23/2023, 10:39:39 PM",
-      "lastLoggedIn": "9/14/2023, 3:57:38 PM"
+      "lastLoggedIn": "12/13/2023, 12:52:21 PM",
+      "Addresses": [
+        {
+          "name": "Rishikesh",
+          "contact": 9049308462,
+          "address1": "rishikesh mens hostel rajiv nagar colony",
+          "address2": "Gachibowli",
+          "pincode": 500032,
+          "city": "Hyderabad"
+        },
+        {
+          "name": "Abhishek kumar",
+          "contact": 8766565443,
+          "address1": "Anshul society 5th floor",
+          "address2": "Near metro station",
+          "pincode": 433233,
+          "city": "Delhi"
+        }
+      ]
     },
     {
       "name": "ram",
@@ -40,7 +58,17 @@
       "status": true,
       "isFeedbackGiven": true,
       "feedbackLabel": "Given",
-      "lastLoggedIn": "9/7/2023, 5:03:39 PM"
+      "lastLoggedIn": "9/21/2023, 6:26:30 PM",
+      "Addresses": [
+        {
+          "name": "Josh",
+          "contact": 8776766545,
+          "address1": "Rishi mens pg rajiv nagar colory",
+          "address2": "near aanjaneya temple, Gachibowli",
+          "pincode": 500032,
+          "city": "Hyderabad"
+        }
+      ]
     },
     {
       "0": {

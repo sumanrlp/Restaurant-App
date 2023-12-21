@@ -1,6 +1,7 @@
 <mat-card>
     <mat-card-content>
-        <h1><a (click)="close()"><i class="fa fa-times" aria-hidden="true" style="float: right;" mat-diolog-close></i></a></h1><br>
+        <h1><a (click)="close()"><i class="fa fa-times" aria-hidden="true" style="float: right;"
+                    mat-diolog-close></i></a></h1><br>
         <div class="mainContainer">
             <div class="subContainer" style="margin-right: 2vw;">
                 <img class="foodimg" src="assets/Images/kadakbhakari.jpg">
@@ -11,9 +12,12 @@
                     bhakri. It can be served with tea, curd or sabji/ sev tamatar ki sabji is best side for bhakri.
                     Bhakri is loaded with ghee or white butter and gives your energy for whole day.</p><br>
                 <div style="display: flex; flex-direction: row; align-items: center;">
-                    <div style="margin-right: 2vw;"><h1 style="margin: 0%;">&#x20b9; 20.00</h1></div>
+                    <div style="margin-right: 2vw;">
+                        <h1 style="margin: 0%;">&#x20b9; 20.00</h1>
+                    </div>
                     <div>
-                        <button *ngIf="!isKb_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('kb_btn')">Add to
+                        <button *ngIf="!isKb_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('kb_btn')">Add
+                            to
                             Bucket</button>
                         <div *ngIf="isKb_AddToBucketCLicked" id="kb_btn" style="display: flex; align-items: center;">
                             <button mat-mini-fab color="warn" style="margin-right: 10px;"

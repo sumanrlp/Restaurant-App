@@ -9,7 +9,8 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { MaterialModule } from 'src/material.module';
 import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddAddressComponent } from './add-address/add-address.component';
 
 
 @NgModule({
@@ -20,12 +21,14 @@ import { FormsModule } from '@angular/forms';
     MyAccountComponent,
     HelpComponent,
     AboutComponent,
+    AddAddressComponent,
   ],
   imports: [
     CommonModule,
     ProfileRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProfileModule { }

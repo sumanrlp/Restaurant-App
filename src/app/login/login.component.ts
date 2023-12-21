@@ -5,6 +5,7 @@ import { AuthServicesService } from '../services/auth-services.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { SignupComponent } from '../signup/signup.component';
 import { ForgotPassComponent } from '../forgot-pass/forgot-pass.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'login',
@@ -13,9 +14,9 @@ import { ForgotPassComponent } from '../forgot-pass/forgot-pass.component';
 })
 export class LoginComponent {
 
-  constructor(private router: Router, private service: AuthServicesService, 
-    private diologRef:MatDialogRef<LoginComponent>, private diolog:MatDialog, private route:ActivatedRoute,
-    ) {
+  constructor(private router: Router, private service: AuthServicesService,
+    private diologRef: MatDialogRef<LoginComponent>, private diolog: MatDialog, private route: ActivatedRoute, private toastr: ToastrService
+  ) {
     sessionStorage.clear()
   }
 
@@ -50,22 +51,23 @@ export class LoginComponent {
             console.log(this.userdata)
             if (this.userdata.pass == this.form.value.pass) {
               if (this.userdata.isActive) {
+                this.toastr.success(`Welcome ${this.userdata.name}`)
                 sessionStorage.setItem('userName', this.userdata.id)
                 sessionStorage.setItem('role', this.userdata.role)
                 this.service.updateUser(this.userdata.id, this.getCurrentDateTime()).subscribe({
-                  next:res=>{
+                  next: res => {
                     console.log(res)
                   },
-                  error:err=>{
+                  error: err => {
                     console.log(err)
                   }
                 })
-                let returnUrl=this.route.snapshot.queryParamMap.get('returnUrl')
+                let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')
                 console.log(returnUrl)
                 this.diologRef.close()
-                if(returnUrl==null) returnUrl=''
+                if (returnUrl == null) returnUrl = ''
                 this.router.navigate([returnUrl])
-                
+
               } else {
                 this.form.setErrors({
                   inActiveUser: true
@@ -80,12 +82,12 @@ export class LoginComponent {
           },
           error: err => {
             console.log(err)
-            if(err.status===404){
+            if (err.status === 404) {
               this.form.setErrors({
                 invalidUser: true
               })
-            }else{
-              this.form.setErrors({unexpectedError:true})
+            } else {
+              this.form.setErrors({ unexpectedError: true })
             }
           }
         })
@@ -96,7 +98,7 @@ export class LoginComponent {
     }
   }
 
-  callSignup(){
+  callSignup() {
     this.diologRef.close()
     const dialog = this.diolog.open(SignupComponent, {
       enterAnimationDuration: 100,
@@ -110,7 +112,7 @@ export class LoginComponent {
     })
   }
 
-  close(){
+  close() {
     this.diologRef.close()
     this.router.navigate(['/home'])
   }
@@ -125,12 +127,12 @@ export class LoginComponent {
   }
 
   getCurrentDateTime() {
-    
+
     var dateTime = new Date().toLocaleString()
-    return {lastLoggedIn: dateTime}
+    return { lastLoggedIn: dateTime }
   }
 
-  forgotPass(){
+  forgotPass() {
     this.diologRef.close()
     const dialog = this.diolog.open(ForgotPassComponent, {
       enterAnimationDuration: 100,

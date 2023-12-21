@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile-child',
@@ -12,8 +13,4 @@ export class ProfileChildComponent {
     router.navigate(['dashboard/my-account'])
   }
 
-  logout(){
-    sessionStorage.clear()
-    this.router.navigate(['/login'])
-  }
 }

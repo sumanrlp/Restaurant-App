@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
 
-  constructor(private router:Router){}
+  constructor(private router:Router, private toastr:ToastrService){}
 
   logout(){
     sessionStorage.clear()
-    this.router.navigate(['/login'])
+    this.router.navigate([''])
+    this.toastr.success('Logged out Successfully')
   }
 
 }

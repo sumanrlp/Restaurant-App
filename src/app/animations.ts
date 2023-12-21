@@ -17,3 +17,12 @@ export let slide = trigger('slide',[
         animate(200)
     ])
 ])
+
+export let slideFast = trigger('slideFast',[
+
+    state('void',style({ opacity:1, transform:'translateX(100%)'})),
+
+    transition(':leave', [
+        animate(200)
+    ])
+])

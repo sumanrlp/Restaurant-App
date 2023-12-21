@@ -15,6 +15,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatExpansionModule } from "@angular/material/expansion";
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
     exports:[
@@ -32,7 +34,9 @@ import { MatExpansionModule } from "@angular/material/expansion";
         MatDividerModule,
         MatFormFieldModule,
         MatSidenavModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatTooltipModule,
+        MatMenuModule
     ]
 })
 

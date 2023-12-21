@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatRadioGroup } from '@angular/material/radio';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -10,9 +9,9 @@ import { LoginComponent } from '../login/login.component';
 })
 export class MsgPopupComponent {
 
-  constructor(private dialogRef:MatDialogRef<MsgPopupComponent>, private dialog:MatDialog){}
+  constructor(private dialogRef: MatDialogRef<MsgPopupComponent>, private dialog: MatDialog) { }
 
-  close(){
+  close() {
     this.dialogRef.close()
     const dialog = this.dialog.open(LoginComponent, {
       enterAnimationDuration: 100,
@@ -22,7 +21,7 @@ export class MsgPopupComponent {
 
     })
     dialog.afterClosed().subscribe(res => {
-      
+
     })
   }
 }

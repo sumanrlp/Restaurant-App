@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input name="name" formControlName="name" matInput type="text">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Contact No.</mat-label>
+                <input formControlName="contact" matInput type="number" pattern="[7-9]{1}[0-9]{9}">
+            </mat-form-field>
+            <div *ngIf="contact?.touched && contact?.invalid">
+                <div *ngIf=" contact?.errors?.['pattern']" style="color: red;">Invalid contact no.</div>
+            </div>
+            <mat-form-field>
+                <mat-label>Address line 1</mat-label>
+                <input formControlName="address1" matInput type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Address line 2</mat-label>
+                <input formControlName="address2" matInput type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>City/Town</mat-label>
+                <input formControlName="city" matInput type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Pincode</mat-label>
+                <input formControlName="pincode" matInput type="number" pattern="[0-9]{6}">
+            </mat-form-field>
+            <div *ngIf="pincode?.touched && pincode?.invalid">
+                <div *ngIf=" pincode?.errors?.['pattern']" style="color: red;">Invalid pincode</div>
+            </div>
+            <div>
+                <button [disabled]="form.invalid" mat-raised-button color="warn" type="submit">Submit</button>
+                <a style="margin-left: 10px;" mat-dialog-close mat-raised-button>Cancel</a>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

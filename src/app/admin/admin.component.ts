@@ -107,7 +107,6 @@ export class AdminComponent implements OnInit {
       } else {
         for (let i = 0; i < data.length; i++) {
           console.log(this.dataSource)
-          // console.log('before', this.temp_datasource)
           let userData = { ...this.dataSource.filteredData }
           let result = Object.keys(userData).map(function (key) {
             return userData[key];
@@ -118,7 +117,6 @@ export class AdminComponent implements OnInit {
           this.temp_datasource.sort = this.sort;
           this.temp_datasource.filter = data[i]
           this.dataSource = _.clone(this.temp_datasource)
-          // this.dataSource = new MatTableDataSource(this.temp_datasource)
           console.log(this.temp_datasource, this.dataSource)
         }
       }

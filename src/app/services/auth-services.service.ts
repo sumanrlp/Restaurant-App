@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +15,7 @@ export class AuthServicesService {
     return this.http.get(this.url)
   }
 
-  getP(){
-    return this.http.get('http://localhost:5000/login');
-  }
-
-  getByUser(User:any) {
+  getByUser(User:any):Observable<any> {
     return this.http.get(this.url+'/'+User)
   }
 
@@ -64,18 +60,26 @@ export class AuthServicesService {
   }
 
   //cart items count
- items:any=0
-  private itemsInCarts= new BehaviorSubject(0)
-  getItemsInCart = this.itemsInCarts.asObservable();
-  changedItemsInCart:any = this.itemsInCarts.asObservable();
+ itemsCount:any=0
+ itemsInCart:any[]=[]
+  private itemsCountInCarts= new BehaviorSubject(0)
+  getItemsCountInCart = this.itemsCountInCarts.asObservable();
 
-  setItemsinCart(items:any){
-    this.items+=items
-    return (this.itemsInCarts.next(this.items))
+  setItemsCountInCart(items:any){
+    this.itemsCount+=items
+    return (this.itemsCountInCarts.next(this.itemsCount))
     
   }
-  ischangedItemsInCart(value:any){
-    return this.changedItemsInCart.next(value)
+
+  addItemsInCart(item:any, count:any){
+    return this.itemsInCart.push({food:item, quentity:count})
+  }
+  removeItemsInCart(items:any){
+    return this.itemsInCart=items
+  }
+
+  getItemsInCart(){
+    return this.itemsInCart
   }
 
 

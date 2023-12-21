@@ -10,3 +10,52 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 a{
     cursor: pointer;
 }
+
+@keyframes slide-enter {
+    0% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes zoomIn-enter {
+    0% {
+        transform: scale(0.1);
+    }
+}
+
+@keyframes slideUp-enter {
+    0% {
+		transform: translateY(-10px);
+	}
+    100% {
+		transform: translateY(20px);
+	}
+}
+@keyframes slideDown-enter {
+    0% {
+        transform: translateY(100%);
+    }
+}
+@keyframes slideFast-out {
+    100% {
+        transform: translatex(100%);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .slide-animation {
+        animation: slide-enter 2s 1;
+    }
+    .slide-animation1 {
+        animation: slide-enter 0.7s 1;
+    }
+    .zoomIn-animation {
+        animation: zoomIn-enter 1s 1;
+    }
+    .slideUp-animation {
+        animation: slideUp-enter 0.2s 1;
+    }
+    .slideDown-animation {
+        animation: slideDown-enter 0.2s 1;
+    }
+}
