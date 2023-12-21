@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-content>
+        <h1><a (click)="close()"><i class="fa fa-times" aria-hidden="true" style="float: right;"
+                    mat-diolog-close></i></a></h1><br>
+        <div class="mainContainer">
+            <div class="subContainer" style="margin-right: 2vw;">
+                <img class="foodimg" src="assets/Images/kadakbhakari.jpg">
+            </div>
+            <div>
+                <p>Bhakri is thick roti made with mota atta. This is very common breakfast in gujarat. There are two to
+                    three types of bhakri that you will find people making biscuit bhakri,jeera bhakri and masala
+                    bhakri. It can be served with tea, curd or sabji/ sev tamatar ki sabji is best side for bhakri.
+                    Bhakri is loaded with ghee or white butter and gives your energy for whole day.</p><br>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <div style="margin-right: 2vw;">
+                        <h1 style="margin: 0%;">&#x20b9; 20.00</h1>
+                    </div>
+                    <div>
+                        <button *ngIf="!isKb_AddToBucketCLicked" class="btn1" (click)="addToBucketToggle('kb_btn')">Add
+                            to
+                            Bucket</button>
+                        <div *ngIf="isKb_AddToBucketCLicked" id="kb_btn" style="display: flex; align-items: center;">
+                            <button mat-mini-fab color="warn" style="margin-right: 10px;"
+                                aria-label="Example icon button with a menu icon" (click)="addToBucketToggle('kb_btn')">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <button class="btn2" (click)="modifyCount('kb_btn','-')">-</button>
+                            <p style="font-size: 1.5vw; padding: 0 10px; margin: 0%;"> <b>{{Kb_count}}</b> </p>
+                            <button class="btn2" (click)="modifyCount('kb_btn','+')">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </mat-card-content>
+</mat-card>

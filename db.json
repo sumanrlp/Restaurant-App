@@ -1,0 +1,380 @@
+{
+  "users": [
+    {
+      "name": "Rishikesh",
+      "id": "rishi",
+      "email": "rishikesh@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Admin",
+      "isFeedbackGiven": true,
+      "feedbackLabel": "Given",
+      "lastLoggedin": "8/23/2023, 10:39:39 PM",
+      "lastLoggedIn": "12/13/2023, 12:52:21 PM",
+      "Addresses": [
+        {
+          "name": "Rishikesh",
+          "contact": 9049308462,
+          "address1": "rishikesh mens hostel rajiv nagar colony",
+          "address2": "Gachibowli",
+          "pincode": 500032,
+          "city": "Hyderabad"
+        },
+        {
+          "name": "Abhishek kumar",
+          "contact": 8766565443,
+          "address1": "Anshul society 5th floor",
+          "address2": "Near metro station",
+          "pincode": 433233,
+          "city": "Delhi"
+        }
+      ]
+    },
+    {
+      "name": "ram",
+      "id": "ram",
+      "email": "jhj@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Admin",
+      "status": true,
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet",
+      "lastLoggedIn": "9/1/2023, 1:29:42 PM"
+    },
+    {
+      "name": "josh",
+      "id": "josh",
+      "email": "jhj@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Staff",
+      "status": true,
+      "isFeedbackGiven": true,
+      "feedbackLabel": "Given",
+      "lastLoggedIn": "9/21/2023, 6:26:30 PM",
+      "Addresses": [
+        {
+          "name": "Josh",
+          "contact": 8776766545,
+          "address1": "Rishi mens pg rajiv nagar colory",
+          "address2": "near aanjaneya temple, Gachibowli",
+          "pincode": 500032,
+          "city": "Hyderabad"
+        }
+      ]
+    },
+    {
+      "0": {
+        "role": "Staff",
+        "isActive": false,
+        "id": "mosh"
+      },
+      "1": {
+        "isActiveLabel": "Disabled"
+      },
+      "name": "mosh",
+      "id": "mosh",
+      "email": "jhj@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": false,
+      "isActiveLabel": "Active",
+      "role": "User",
+      "isFeedbackGiven": true,
+      "feedbackLabel": "Given"
+    },
+    {
+      "name": "Ravi",
+      "id": "ravi",
+      "email": "ravi@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Staff",
+      "isFeedbackGiven": true,
+      "feedbackLabel": "Given"
+    },
+    {
+      "name": "Azfal",
+      "id": "afzal",
+      "email": "afzal@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": false,
+      "isActiveLabel": "Disabled",
+      "role": "user",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "Sa",
+      "id": "sa",
+      "email": "sa@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "user",
+      "isFeedbackGiven": true,
+      "feedbackLabel": "Given",
+      "lastLoggedIn": "8/30/2023, 7:17:42 PM"
+    },
+    {
+      "name": "Abhishek",
+      "id": "abhi",
+      "email": "abhishesk@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "user",
+      "isFeedbackGiven": true,
+      "feedbackLabel": "Given",
+      "lastLoggedIn": "9/12/2023, 3:55:57 PM"
+    },
+    {
+      "name": "Feed",
+      "id": "feed",
+      "email": "feed@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": false,
+      "isActiveLabel": "Disabled",
+      "role": "user",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "Rakesh",
+      "id": "rocky",
+      "email": "potdarrisho1705@gmail.com",
+      "pass": "Rakesh@1234",
+      "confirmPassword": "Rakesh@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "User",
+      "isFeedbackGiven": true,
+      "lastLoggedIn": "8/23/2023, 10:37:41 PM",
+      "feedbackLabel": "Given"
+    },
+    {
+      "name": "rishi",
+      "id": "rp",
+      "email": "sa@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": false,
+      "isActiveLabel": "Disabled",
+      "role": "Staff",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "ravi",
+      "id": "ravu",
+      "email": "jhj@gmail.com",
+      "pass": "Ravi@1234",
+      "confirmPassword": "Ravi@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "User",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "ramesh",
+      "id": "ramya",
+      "email": "sa@gmail.com",
+      "pass": "Ram@12345",
+      "confirmPassword": "Ram@12345",
+      "isActive": false,
+      "isActiveLabel": "Disabled",
+      "role": "User",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "bharati",
+      "id": "bharati",
+      "email": "jhj@gmail.com",
+      "pass": "Bharati@123",
+      "confirmPassword": "Bharati@123",
+      "isActive": false,
+      "isActiveLabel": "Disabled",
+      "role": "Unassigned",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "bharati",
+      "id": "bharati2",
+      "email": "jhj@gmail.com",
+      "pass": "Bharati@123",
+      "confirmPassword": "Bharati@123",
+      "isActive": false,
+      "isActiveLabel": "Disabled",
+      "role": "Unassigned",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "guru",
+      "id": "guru",
+      "email": "rushikesh.potadar@gmail.com",
+      "pass": "Guru@1234",
+      "confirmPassword": "Guru@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Staff",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "guru",
+      "id": "guruu",
+      "email": "jhj@gmail.com",
+      "pass": "Guru@1234",
+      "confirmPassword": "Guru@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Unassigned",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "dsfs",
+      "id": "gurt",
+      "email": "jhj@gmail.com",
+      "pass": "Suman@1234",
+      "confirmPassword": "Suman@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "User",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet"
+    },
+    {
+      "name": "abhishek",
+      "id": "abhi2",
+      "email": "potdarrushi1705@gmail.com",
+      "pass": "Abhi@1234",
+      "confirmPassword": "Abhi@1234",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Unassigned",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotYet",
+      "lastLoggedIn": "9/7/2023, 5:27:30 PM"
+    },
+    {
+      "name": "afzal",
+      "id": "affu",
+      "email": "afzal@gmail.com",
+      "pass": "Afzal@1234",
+      "confirmPassword": "Afzal@1234",
+      "securityQuestion": "Nick name",
+      "securityAnswer": "affu",
+      "isActive": true,
+      "isActiveLabel": "Active",
+      "role": "Unassigned",
+      "isFeedbackGiven": false,
+      "feedbackLabel": "NotGiven",
+      "lastLoggedIn": "9/13/2023, 6:19:35 PM"
+    }
+  ],
+  "role": [
+    {
+      "code": "staff",
+      "role": "Staff"
+    },
+    {
+      "code": "user",
+      "role": "User"
+    },
+    {
+      "code": "admin",
+      "role": "Admin"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "rishi",
+      "name": "rishi",
+      "email": "abhi@gmail.com",
+      "management": "good",
+      "taste": "good",
+      "serviceRating": "* * * *",
+      "suggestion": "No"
+    },
+    {
+      "id": "rocky",
+      "name": "Rakesh",
+      "email": "rishi@gmail.com",
+      "management": "good",
+      "taste": "good",
+      "service": "* * *",
+      "suggestion": "No"
+    },
+    {
+      "id": "ravi",
+      "name": "ravi",
+      "email": "jhj@gmail.com",
+      "management": "good",
+      "taste": "best",
+      "service": "* * * *",
+      "suggestion": "No suggestion"
+    },
+    {
+      "id": "josh",
+      "name": "josh",
+      "email": "Suman@1234",
+      "management": "good",
+      "taste": "Worst",
+      "service": "* * * * *",
+      "suggestion": "Need to improve tatse"
+    },
+    {
+      "id": "mosh",
+      "name": "mosh",
+      "email": "Suman@1234",
+      "management": "Worst",
+      "taste": "Worst",
+      "service": "* *",
+      "suggestion": "worst taste"
+    },
+    {
+      "id": "sa",
+      "name": "sad",
+      "email": "jhj@gmail.com",
+      "management": "Best",
+      "taste": "Good",
+      "service": "* * * *",
+      "suggestion": "hggtf"
+    },
+    {
+      "id": "abhi",
+      "name": "abhi",
+      "email": "jhj@gmail.com",
+      "management": "Best",
+      "taste": "Good",
+      "service": "* * * *",
+      "suggestion": ""
+    }
+  ],
+  "orders": [
+    {
+      "id": "mosh",
+      "items": {
+        "bharalivangi": 1
+      }
+    }
+  ]
+}

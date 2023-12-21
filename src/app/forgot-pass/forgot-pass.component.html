@@ -1,0 +1,72 @@
+<mat-card *ngIf="!isSubmitted">
+    <mat-card-content style="padding: 0%; box-shadow: 0 0 3px black;">
+        <form [formGroup]='form' class="example-form" (ngSubmit)="submit()">
+            <div class="container">
+                <h1 style="margin: 0%;">Change Password</h1><br>
+                <div *ngIf="!isValid" class="alert alert-danger">
+                    <div>Plese enter valid data</div>
+                </div>
+                <div class="alert alert-danger" *ngIf="form.errors?.['invalidUser']">Invalid Username</div>
+                <div class="alert alert-danger" *ngIf="form.errors?.['emptyField']">Please provide req* fields</div>
+                <div class="alert alert-danger" *ngIf="form.errors?.['invalidSecurityDetails']">Security details not match, If you forgot please contact Admin to Reset password</div>
+                <div class="alert alert-danger" *ngIf="form.errors?.['unexpectedError']">Unexpected error from server
+                    side, please try again after some time.</div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>UserName</mat-label>
+                    <input class="form-control" formControlName="id" name="userName" id="userName" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Select security question</mat-label>
+                    <mat-select name="securityQuestion" formControlName="securityQuestion">
+                        <mat-option [value]="'Favorite cricketer'">Favorite cricketer</mat-option>
+                        <mat-option [value]="'Favorite food'">Favorite food</mat-option>
+                        <mat-option [value]="'Pet name'">Pet name</mat-option>
+                        <mat-option [value]="'Nick name'">Nick name</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Security answer</mat-label>
+                    <input type="text" formControlName="securityAnswer" name="securityAnswer" id="securityAnswer"
+                        matInput>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>New Password</mat-label>
+                    <input type="password" class="form-control" formControlName="pass" name="pass" id="pass" matInput>
+                </mat-form-field>
+                <div *ngIf="pass.touched && pass.invalid" style="color: red;">
+                    <div *ngIf="pass.errors?.['pattern']">Pass should contain atleast 1 lowercase, Uppercase, special
+                        char,
+                        number and letgth should be min of 8</div>
+                </div>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Cofirm Password</mat-label>
+                    <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword"
+                        id="confirmPassword" matInput>
+                </mat-form-field>
+                <div *ngIf="confirmPassword.valid && form.errors?.['passNotMatch']" style="color: red;">Pass does not match
+                </div>
+                <div>
+                    <button class="loginBtn" type="submit" mat-raised-button color="warn"
+                        style=" margin-left: 10px; float: right;">Submit</button>
+                    <button mat-stroked-button color="warn" mat-diolog-close (click)="close()"
+                        style="float: right;">Cancel</button>
+                </div>
+                <br><br>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="isSubmitted">
+    <mat-card-content style="padding: 20px; box-shadow: 0 0 3px black;">
+        <h1>Pass changed Successfully!</h1>
+        <div>
+            <button (click)="callLogin()" class="loginBtn" type="submit" mat-raised-button color="warn"
+                style=" margin-left: 10px; float: right;">Login</button>
+            <button mat-stroked-button color="warn" mat-diolog-close (click)="close()"
+                style="float: right;">Cancel</button>
+        </div>
+    </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,30 @@
+<div>
+  <img src="assets/Images/solapueimg.jpg"
+    style="width: 16vh; height: 6vh; position: fixed; margin: 0%;left: 0; z-index: 5;">
+  <div id="nav-container" class="nav-container" style="padding: 10px; box-shadow: 0 0 3px black; right: 0;left: 0;">
+    <div class="sticky">
+      <ul class="nav nav-pills justify-content-end" style="right: 0;">
+        <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/dashboard">Profile</a>
+        </li>
+        <li *ngIf="isLoggedIn && isAdminUser" class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/admin">Users</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" (click)="login()">Login</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active current" (click)="logout()">
+          <a class="nav-link" routerLink="/homelogout">Logout <i class="fa fa-lg fa-sign-out"
+              aria-hidden="true"></i></a>
+        </li>
+        <li class="bucket nav-item badge" [value]="itemsInCart" routerLinkActive="active current">
+          <a matTooltip="View Bucket" matTooltipPosition="below" routerLink="/homelogout"><fa-icon [icon]="faBucket"
+              class=" fa-3x fa-bounce fa-beat" style="color: #f44336;" (click)="viewCart()"></fa-icon></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> <br><br><br>

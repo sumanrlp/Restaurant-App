@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-content style="padding: 0%; box-shadow: 0 0 3px black;">
+        <form [formGroup]='form' class="example-form" (ngSubmit)="login()">
+            <div class="container">
+                <h1 style="margin: 0%;">Login</h1><br>
+                <div class="alert alert-danger" *ngIf="form.errors">
+                    <div *ngIf="form.errors?.['invalidLogin'] || form.errors?.['invalidUser']">Invalid Username or
+                        Password</div>
+                    <div *ngIf="form.errors?.['emptyField']">Please provide req* fields</div>
+                    <div *ngIf="form.errors?.['inActiveUser']">Account is not Active, please contact admin to Activate
+                    </div>
+                    <div *ngIf="form.errors?.['unexpectedError']">Unexpected error from server side, please try again
+                        after some time.</div>
+                </div>
+                <a style="cursor: pointer;" *ngIf="requestAccessLink" (click)="requestAccessMethod()">Request to
+                    Activate<br><br></a>
+                <p *ngIf="requestAccess">Requested to Activate</p>
+                <mat-form-field class="example-full-width">
+                    <mat-label>UserName</mat-label>
+                    <input class="form-control" formControlName="userName" name="userName" id="userName" matInput>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" class="form-control" formControlName="pass" name="pass" id="pass" matInput>
+                </mat-form-field>
+                <a (click)="callSignup()">New user? click here to Sign up</a>
+                <a (click)="forgotPass()" style="float: right;">forgot password?</a><br><br>
+                <div>
+                    <button class="loginBtn" type="submit" mat-raised-button color="warn"
+                        style=" margin-left: 10px; float: right;">Log in</button>
+                    <button mat-stroked-button color="warn" mat-diolog-close (click)="close()"
+                        style="float: right;">Cancel</button>
+                </div>
+                <br><br>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

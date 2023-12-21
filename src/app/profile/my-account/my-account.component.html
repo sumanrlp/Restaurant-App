@@ -1,0 +1,87 @@
+<div class="sideDiv">
+    <h1 style=" font-size: 2vw;"><i>Welcome! {{userdata?.name}}</i></h1><br>
+    <div style="box-shadow: 0 2px 2px -2px black">
+        <h2>User Details: </h2>
+        <mat-card style="width: 50%;">
+            <mat-card-content>
+                <form>
+                    <div class="container">
+                        <button matTooltip="Edit the details" matTooltipPosition="below" [disabled]="isEditClicked"
+                            (click)="edit(name,email,id)" style="float: right;"><i class="fa fa-pencil"
+                                style="font-weight: bold;"></i></button>
+
+                        <table>
+                            <tr>
+                                <th>Name:</th>
+                                <td> <span><input id="name" [disabled]="!isEditClicked"
+                                            (keyup)="changed(name,email,id,email1)" value="{{userdata?.name}}" #name
+                                            class="data" style="border: none; background-color: white;"></span></td>
+
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td><span><input pattern=".+@gmail.com" name="email" ngModel [disabled]="!isEditClicked"
+                                            (keyup)="changed(name,email,id,email1)" value="{{userdata?.email}}"
+                                            #email1="ngModel" #email class="data" id="email"
+                                            style="border: none; background-color: white;"></span>
+                                    <div style="color: red;" *ngIf="email1.errors?.['pattern']">Invalid email Id</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Usename:</th>
+                                <td><span><input id="id" [disabled]="!isEditClicked"
+                                            (keyup)="changed(name,email,id,email1)" value="{{userdata?.id}}" #id
+                                            class="data" style="border: none; background-color: white;"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Role:</th>
+                                <td><span><input value="{{userdata?.role}}"
+                                            style="border: none; background-color: white;" disabled></span></td>
+                            </tr>
+                        </table>
+                    </div><br>
+                    <button type="submit" [disabled]="!isDataEdited" mat-raised-button color="warn"
+                        (click)="update(name,email,id)">Update</button>
+                    <button *ngIf="isEditClicked" mat-raised-button (click)="cancel(name,email,id)"
+                        style="margin-left: 10px;">Cancel</button>
+                </form>
+            </mat-card-content>
+        </mat-card><br>
+    </div><br>
+
+    <div style="width: 50%;">
+        <h2 style="display: inline-block;">Adresses: </h2>
+        <button matTooltip="Add address" matTooltipPosition="below" (click)="addAddress()" style="float: right;"><i
+                class="fa fa-plus" style="font-weight: bold;"></i></button>
+        <div *ngIf="addresses">
+            <div *ngFor="let address of addresses">
+                <mat-card style="width: 100%;">
+                    <mat-card-content>
+                        <form>
+                            <div class="container">
+                                <button mat-button [matMenuTriggerFor]="menu" style="float: right;"><i
+                                        class="fa fa-ellipsis-v"></i></button>
+                                <mat-menu #menu="matMenu">
+                                    <button (click)="editAddress(addresses.indexOf(address))"
+                                        mat-menu-item>Edit</button>
+                                    <button (click)="deleteAddress(addresses.indexOf(address))"
+                                        mat-menu-item>Delete</button>
+                                </mat-menu>
+
+                                <h2>{{address.name}}</h2>
+                                <p>{{address.address1 }}, {{address.address2}}</p>
+                                <p>{{address.city}}, {{address.pincode}}</p>
+                                <p>{{address.contact}}</p>
+
+                            </div><br>
+                        </form>
+                    </mat-card-content>
+                </mat-card><br>
+            </div>
+        </div>
+        <div *ngIf="!addresses">
+            No saved addresses
+        </div>
+    </div><br>
+
+</div>

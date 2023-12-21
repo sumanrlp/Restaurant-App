@@ -1,0 +1,62 @@
+
+<div class="feedbackContainer" *ngIf="!isFeedbackGiven" style="display: flex; align-items: center;justify-content: center;">
+    <mat-card style="width: 100%;">
+        <mat-card-content>
+            <h1>Feedback</h1>
+            <form class="example-form" [formGroup]="form" (ngSubmit)="submitFeedback()" style="width: 100%;">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input formControlName="name" matInput type="text">
+                    <div *ngIf="name?.invalid && name?.touched" style="color: red;">
+                        <div *ngIf="name?.errors?.['minlength']">Name should be atleast {{name?.errors?.['minlength'].requiredLength}} char</div>
+                    </div>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput type="email">
+                </mat-form-field>
+                <mat-radio-group formControlName="management" aria-label="Select an option">
+                    <h2>Hotel Management:</h2>
+                    <mat-radio-button value="Best">Best</mat-radio-button>
+                    <mat-radio-button value="Good">Good</mat-radio-button>
+                    <mat-radio-button value="Average">Average</mat-radio-button>
+                    <mat-radio-button value="Worst">Worst</mat-radio-button>
+                </mat-radio-group><br><br>
+                <mat-radio-group formControlName="taste" aria-label="Select an option">
+                    <h2>Taste of Food:</h2>
+                    <mat-radio-button value="Best">Best</mat-radio-button>
+                    <mat-radio-button value="Good">Good</mat-radio-button>
+                    <mat-radio-button value="Average">Average</mat-radio-button>
+                    <mat-radio-button value="Worst">Worst</mat-radio-button>
+                </mat-radio-group><br><br>
+                <h2>Overall Service:</h2>
+                <mat-form-field>
+                    <mat-label>Select Rating</mat-label>
+                    <mat-select formControlName="service">
+                        <mat-option [value]="'* * * * *'">* * * * *</mat-option>
+                        <mat-option [value]="'* * * *'">* * * *</mat-option>
+                        <mat-option [value]="'* * *'">* * *</mat-option>
+                        <mat-option [value]="'* *'">* *</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Any Suggestion:</mat-label>
+                    <textarea formControlName="suggestion" matInput placeholder="Ex. Need to improve service"></textarea>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="warn" type="submit" style="margin-left: 20px;float: right;">Submit</button>
+                    <a mat-raised-button mat-diolog-close (click)="close()" style="float: right;" >Cancel</a>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div *ngIf="isFeedbackGiven" style="display: flex; align-items: center;justify-content: center;">
+<mat-card style="width: 100%;">
+    <mat-card-content >
+        <h1>Thank You! for your Feedback.</h1><br>
+        <a  (click)="close()" mat-raised-button color="warn">Back to Home</a>
+    </mat-card-content>
+</mat-card>
+</div>

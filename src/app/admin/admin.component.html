@@ -1,0 +1,72 @@
+
+<br>
+<h1 style="margin-left: 2%;">Welcome Admin!</h1>
+<div class="mat-elevation-z8" style="padding: 30px; width: 90%; margin-left: 5%;">
+    <h2>Users 
+        <input ngModel name="search" #search="ngModel" class="form-control me-2" type="search" placeholder="Search user" (keyup)="keyUp(search.value)" aria-label="Search" style="float:right; width: 20vw;">
+        <i class="bi bi-funnel-fill form-control" style="float: right;margin-right: 1%; cursor: pointer;width: 3vw;"(click)="filter()"></i>
+    </h2>
+    <table mat-table matSort [dataSource]="dataSource">
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- UserName Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> UserName </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+  
+      <!-- Role Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element">  {{element.isActiveLabel}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> <button *ngIf="element.role!=='Admin'" mat-raised-button color="warn" (click)="update(element.id)">Update</button> </td>
+      </ng-container>
+
+      <!-- feedback Column -->
+      <ng-container matColumnDef="feedback">
+        <th mat-header-cell *matHeaderCellDef> Feedback Status</th>
+        <td  mat-cell *matCellDef="let element" >
+            <div class="rolecol" *ngIf="element.role!=='admin'">
+                {{element.feedbackLabel}}
+                <a><i style="margin-left: 5px;" matTooltip="View feedback" matTooltipPosition="below" *ngIf="element.isFeedbackGiven" class="fa fa-eye eye" aria-hidden="true" (click)="viewFeedback(element.id)"></i></a>
+            </div> 
+        </td>
+      </ng-container>
+
+      <!-- UserName Column -->
+      <ng-container matColumnDef="lastLoggedIn">
+        <th mat-header-cell *matHeaderCellDef> LastLoggedIn </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastLoggedIn}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
